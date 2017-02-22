@@ -31,16 +31,16 @@ jsTimeLog.Init = function (obj, ns) {
     }
     var ownObj = Object.getOwnPropertyNames(obj);
     for (var i = 0; i < ownObj.length; i++) {
+        if (jsTimeLog.BlackList.indexOf(ownObj[i].toLowerCase()) !== -1) {
+            if (jsTimeLog.Debug) console.log(ownObj[i] + ' is blacklisted');
+            continue;
+        }
         if (typeof obj[ownObj[i]] === 'function') {
             if (jsTimeLog.RewriteFunction(obj[ownObj[i]], ownObj[i])) {
                 functions.push(ownObj[i]);
             }
         } else if (typeof obj[ownObj[i]] === 'object' && obj[ownObj[i]] !== obj) {
-            if (jsTimeLog.BlackList.indexOf(ownObj[i].toLowerCase()) !== -1)
-            {
-                if(jsTimeLog.Debug) console.log(ownObj[i] + ' is blacklisted');
-                continue;
-            }
+            
             if (typeof ownObj[i] !== 'undefined' && typeof obj[ownObj[i]] !== 'undefined') {
                 if (obj[ownObj[i]] !== null && obj[ownObj[i]].toString().replace(/[\[\]]/gi, '').split(' ')[1]) {
                     if (jsTimeLog.Debug) console.log("Going deeper: " + ownObj[i]);
