@@ -10,7 +10,7 @@ jsTimeLog.BlackList = [
     'capextent', 'ol_texts', 'ol_caps', 'olinfo', 'ol_text',
     '$telerik', '$common', 'prum_episodes', 'console', 'chrome',
     'memory', 'postparse', 'o3_frame', '_kgdata', 'window.$addhandler',
-    'window.onload', 'window.$', '$addHandler', 'window.jQuery',
+    'window.onload', 'window.$', '$addhandler', 'window.jquery',
     'window.$get', 'window.$create', 'window.$find', 'window.$addhandlers',
     '$get', '$create', '$addhandler', '$addhandlers', 'window.theform',
     'telerikcommonscripts', 'commonscripts', '__dopostback', 'window.__dopostback',
