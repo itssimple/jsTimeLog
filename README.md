@@ -11,4 +11,5 @@ Put the script reference at the end of your page.
   // Parameters: object to iterate over, namespace-start
 	jsTimeLog.Init(window, 'window');
 })();
-</script>```
+</script>
+```
